@@ -1,0 +1,82 @@
+:root {
+  --black: #212121;
+  --green: #33CC33;
+}
+
+body {
+  margin: 0;
+  background-color: var(--black);
+  color: var(--green);
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 3fr; /* 1fr for header, 3fr for content */
+}
+
+header {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  /*background-color: black;*/
+  position: relative; /* Necessary for pseudo-element positioning */
+}
+
+h1 {
+  text-shadow: 0 0 10px rgba(51, 204, 51, 0.5); /* Green glow effect */
+  font-size: 3rem;
+}
+
+header::after {
+  content: "";
+  display: block;
+  width: 50%;                /* Half of the header width */
+  height: 2px;               /* Thickness of the line */
+  background-color: #1f8b1f; /* Line color to match the theme */
+  position: absolute;
+  bottom: 0;
+  left: 25%;                 /* Centers the line with 25% space on each side */
+}
+
+button {
+  height: 2rem;
+  width: 6rem;
+  background: none;        /* No background */
+  border: none;            /* No border */
+  color: #1f8b1f;          /* Muted green for default state */
+  font-size: 1.2rem;       /* Adjust size as needed */
+  text-transform: uppercase;
+  position: relative;
+  cursor: pointer;
+  padding-bottom: 0.2rem;  /* Add padding to make space for the underline */
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  width: 50%;                    /* Starts as 50% of the button width */
+  height: 2px;                   /* Underline thickness */
+  background-color: #1f8b1f;     /* Underline color (darker green) */
+  bottom: 0;
+  left: 25%;                     /* Center the initial underline (25% from left) */
+  transform: scaleX(0.8);        /* Starts at 50% scale (half underline) */
+  transform-origin: center;      /* Ensures it expands from the center */
+  transition: transform 0.3s ease; /* Smooth animation for scaling */
+}
+
+button:hover::after {
+  transform: scaleX(1.4);        /* Expands to 90% scale on hover */
+}
+
+button:hover {
+  color: #33CC33;                /* Bright green text on hover */
+  text-shadow: 0 0 3px #33CC33;  /* Optional glow effect */
+}
+
+#content {
+  color: #b3b3b3 ;
+  font-size: 1.5rem;
+  padding: 2rem;
+  display: grid;
+  justify-items: center;
+}
+
