@@ -1,6 +1,7 @@
 import "./styles.css"
 import { createHomePage } from "./modules/homepage";
 import { createMenuPage } from "./modules/menupage";
+import { createAboutPage } from "./modules/aboutpage";
 
 function removeContent () {
     const content = document.querySelector("#content");
@@ -22,6 +23,7 @@ menuButton.addEventListener('click', () => {
 })
 
 aboutButton.addEventListener('click', () => {
+    createAboutPage();
     removeContent();
 })
 

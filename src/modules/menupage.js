@@ -1,3 +1,5 @@
+import cursed from '../assets/images/cursed.png'
+
 export function createMenuPage () {
     const content = document.createElement("div");
     const noMenu = document.createElement("div");
@@ -5,7 +7,7 @@ export function createMenuPage () {
 
     content.id = "content";
     noMenu.id = "menu-not-found";
-    cursedImage.src = "../assets/images/cursed.png";
+    cursedImage.src = cursed;
     cursedImage.alt = "money"
 
     noMenu.textContent = "No Menu Items found"

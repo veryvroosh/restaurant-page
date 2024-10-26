@@ -104,7 +104,19 @@ button:hover {
   z-index: 9999;
 }
 
-.cursed img {
+.cursed-mode img {
   width: 50vw;
-  max-width: 500px;
+  max-width: 750px;
+}
+
+a {
+  color: var(--green);
+}
+
+a:hover{
+  color: #1f8b1f
+}
+
+a:visited {
+  color: #1f8b1f;
 }
