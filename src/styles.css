@@ -1,9 +1,12 @@
 :root {
   --black: #212121;
   --green: #33CC33;
+  --mutedGreen: #1f8b1f;
 }
 
 body {
+  font-family: 'Calibri', sans-serif;
+  line-height: 1.75rem;
   margin: 0;
   background-color: var(--black);
   color: var(--green);
@@ -21,8 +24,10 @@ header {
 }
 
 h1 {
-  text-shadow: 0 0 10px rgba(51, 204, 51, 0.5); /* Green glow effect */
+  user-select: none;
+  text-shadow: 0 0 5px rgba(31, 139, 31, 0.8); /* Green glow effect */
   font-size: 3rem;
+  margin-bottom: -0.5rem;
 }
 
 header::after {
@@ -30,7 +35,7 @@ header::after {
   display: block;
   width: 50%;                /* Half of the header width */
   height: 2px;               /* Thickness of the line */
-  background-color: #1f8b1f;
+  background-color: var(--mutedGreen);
   position: absolute;
   bottom: 0;
   left: 25%;                 /* Centers the line with 25% space on each side */
@@ -41,7 +46,7 @@ button {
   width: 6rem;
   background: none;        /* No background */
   border: none;            /* No border */
-  color: #1f8b1f;
+  color: var(--mutedGreen);
   font-size: 1.3rem;       /* Adjust size as needed */
   text-transform: uppercase;
   position: relative;
@@ -54,7 +59,7 @@ button::after {
   position: absolute;
   width: 50%;                    /* Starts as 50% of the button width */
   height: 2px;                   /* Underline thickness */
-  background-color: #1f8b1f;     /* Underline color (darker green) */
+  background-color: var(--mutedGreen);     /* Underline color (darker green) */
   bottom: 0;
   left: 25%;                     /* Center the initial underline (25% from left) */
   transform: scaleX(0.8);        /* Starts at 50% scale (half underline) */
@@ -67,7 +72,7 @@ button:hover::after {
 }
 
 button:hover {
-  color: #33CC33;                /* Bright green text on hover */
+  color: var(--green);                /* Bright green text on hover */
   text-shadow: 0 0 3px #33CC33;  /* Optional glow effect */
 }
 
@@ -102,7 +107,22 @@ button:hover {
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  opacity: 0; /* Initial opacity */
+  transition: opacity 0.2s ease; /* Smooth transition for opacity */
 }
+
+.cursed-mode.show {
+  opacity: 1; /* Full opacity when shown */
+}
+
+.cursed-mode img {
+  transition: opacity 4s ease; /* Slow fade-out transition for the image */
+}
+
+.cursed-mode img.fade-out {
+  opacity: 0; /* Fade out image */
+}
+
 
 .cursed-mode img {
   width: 50vw;
@@ -114,9 +134,9 @@ a {
 }
 
 a:hover{
-  color: #1f8b1f
+  color: var(--mutedGreen)
 }
 
 a:visited {
-  color: #1f8b1f;
+  color: var(--mutedGreen);
 }

@@ -25,5 +25,16 @@ export function createMenuPage () {
         document.body.appendChild(overlay);
 
         cursedImage.style.display = "block";
+
+        // Use setTimeout to add the 'show' class after the overlay is added
+        setTimeout(() => {
+            overlay.classList.add("show");
+        }, 0);
+
+        // Start the fade-out effect after 5 seconds
+        setTimeout(() => {
+            cursedImage.classList.add("fade-out"); // Fade out the image
+            overlay.style.backgroundColor = "black"; // Keep the overlay black
+        }, 3000); // Delay for 5 seconds before starting the fade out
     })
 }
