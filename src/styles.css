@@ -17,8 +17,7 @@ header {
   grid-template-rows: 1fr 1fr;
   align-items: center;
   justify-items: center;
-  /*background-color: black;*/
-  position: relative; /* Necessary for pseudo-element positioning */
+  position: relative;
 }
 
 h1 {
@@ -31,7 +30,7 @@ header::after {
   display: block;
   width: 50%;                /* Half of the header width */
   height: 2px;               /* Thickness of the line */
-  background-color: #1f8b1f; /* Line color to match the theme */
+  background-color: #1f8b1f;
   position: absolute;
   bottom: 0;
   left: 25%;                 /* Centers the line with 25% space on each side */
@@ -42,12 +41,12 @@ button {
   width: 6rem;
   background: none;        /* No background */
   border: none;            /* No border */
-  color: #1f8b1f;          /* Muted green for default state */
-  font-size: 1.2rem;       /* Adjust size as needed */
+  color: #1f8b1f;
+  font-size: 1.3rem;       /* Adjust size as needed */
   text-transform: uppercase;
   position: relative;
   cursor: pointer;
-  padding-bottom: 0.2rem;  /* Add padding to make space for the underline */
+  padding-bottom: 0.3rem;  /* Add padding to make space for the underline */
 }
 
 button::after {
@@ -73,10 +72,14 @@ button:hover {
 }
 
 #content {
-  color: #b3b3b3 ;
-  font-size: 1.5rem;
+  color: #b3b3b3;
+  font-size: 1.55rem;
+  margin: 0 auto; /* Centers #content horizontally */
   padding: 2rem;
+  width: 50vw;
   display: grid;
+  grid-template-rows: max-content;
+  grid-auto-rows: max-content;
   justify-items: center;
+  align-items: center;
 }
-
